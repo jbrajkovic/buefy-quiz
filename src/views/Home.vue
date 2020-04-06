@@ -14,20 +14,17 @@
       size="is-large"
       @click.stop="startRandomQuiz()"
     >Start Random Quiz</b-button>
-    <Loader :isLoading="isLoading" />
   </div>
 </template>
 
 <script>
-import Loader from "@/components/PageLoader.vue";
 import Steps from "@/components/Steps.vue";
 import { mutations } from "../store";
 
 export default {
   name: "Home",
   components: {
-    Steps,
-    Loader
+    Steps
   },
   data() {
     return {
@@ -40,6 +37,10 @@ export default {
 
     startRandomQuiz() {
       this.isLoading = true;
+      const loadingComponent = this.$buefy.loading.open({
+        container: this.isLoading ? null : this.$refs.element.$el
+      });
+
       let randomIndex = Math.floor(Math.random() * this.questionNumbers.length);
       let randomNumber = this.questionNumbers[randomIndex];
 
@@ -50,6 +51,7 @@ export default {
         .then(data => {
           this.storeQuestions(data.results);
           this.isLoading = false;
+          loadingComponent.close();
           this.$router.push("/quiz");
         });
     }

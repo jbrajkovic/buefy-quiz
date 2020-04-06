@@ -1,16 +1,13 @@
 <template>
   <section>
     <button class="button is-medium is-success" @click="confirm">Create</button>
-    <Loader :isLoading="isLoading" />
   </section>
 </template>
 
 <script>
 import { store, mutations } from "../../store";
-import Loader from "../PageLoader";
 
 export default {
-  components: { Loader },
   data() {
     return {
       isLoading: false
@@ -50,6 +47,10 @@ export default {
 
     createQuiz(options) {
       this.isLoading = true;
+
+      const loadingComponent = this.$buefy.loading.open({
+        container: this.isLoading ? null : this.$refs.element.$el
+      });
       const query = Object.keys(options)
         .filter(option => options[option] !== "any")
         .map(option => `${option}=${options[option]}`)
@@ -62,6 +63,7 @@ export default {
         .then(data => {
           this.storeQuestions(data.results);
           this.isLoading = false;
+          loadingComponent.close()
           this.$router.push("/quiz");
         });
     }
