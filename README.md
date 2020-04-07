@@ -3,9 +3,8 @@
 Progressive Web App with VueJs
 
 ## Demo Link
-```
+
 [link](https://app.netlify.com/sites/dreamy-jones-8d3cc9/overview)
-```
 
 ## Project setup
 ```
