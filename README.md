@@ -4,7 +4,7 @@ Progressive Web App with VueJs
 
 ## Demo Link
 ```
-https://app.netlify.com/sites/dreamy-jones-8d3cc9/overview
+[link](https://app.netlify.com/sites/dreamy-jones-8d3cc9/overview)
 ```
 
 ## Project setup
