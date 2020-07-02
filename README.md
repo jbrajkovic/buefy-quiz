@@ -4,7 +4,7 @@ Progressive Web App with VueJs
 
 ## Demo Link
 
-[Buefy-Quiz](https://dreamy-jones-8d3cc9.netlify.com)
+[Buefy-Quiz](https://dreamy-jones-8d3cc9.netlify.app)
 
 ## Project setup
 ```
