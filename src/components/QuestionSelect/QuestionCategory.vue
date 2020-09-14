@@ -49,7 +49,8 @@ export default {
         let selectedCategory = this.categories.find(
           (category) => category.value === this.category
         );
-        this.setQuestionCategory(selectedCategory.name);
+        let categoryValue = selectedCategory ? selectedCategory.value : ""
+        this.setQuestionCategory(categoryValue);
       },
     },
   },
