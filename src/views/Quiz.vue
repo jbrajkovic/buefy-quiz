@@ -174,7 +174,6 @@ export default {
     setTimeout(() => {
       //Avoid possibility of button stay clicked after creating questions
       this.loading = false;
-      console.log('finished', this.finished, this.questions )
     }, 10);
   },
   watch: {

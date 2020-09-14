@@ -56,7 +56,6 @@ export default {
         .map(option => `${option}=${options[option]}`)
         .join("&");
 
-      console.log(query, 'queryString')
 
       fetch(`https://opentdb.com/api.php?${query}`)
         .then(response => {
